@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
-import AddColumn from "../../components/AddColumn";
+
 const initialState = {
-    columns:[],
+    columns:{},
     isDark: false,
 }
 
@@ -13,7 +13,12 @@ const taskSlice = createSlice({
             state.columns[action.payload] = []; //dynamicall creating key 
         },
         addTask : (state, action) => {
+            const { title, description, column } = action.payload;
 
+            const taskItem = {
+                title,
+                description
+            };
             state.columns[column].push(taskItem)
 
         }
@@ -22,5 +27,5 @@ const taskSlice = createSlice({
 
 })
 
-export const {addColumn} = taskSlice.actions;
+export const {addColumn, addTask} = taskSlice.actions;
 export default taskSlice.reducer;

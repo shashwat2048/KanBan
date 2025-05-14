@@ -1,9 +1,10 @@
 
 import { Switch } from "@material-tailwind/react";
 import { GoSun, GoMoon } from "react-icons/go";
-import { LuCirclePlus } from "react-icons/lu";
+
 import { HiDotsVertical } from "react-icons/hi";
 import logo from "../assets/logo.png";
+import AddTaskButton from "./AddTaskButotn";
 
 export default function Navbar() {
     return(
@@ -18,7 +19,7 @@ export default function Navbar() {
                 <Switch/>
                 <GoMoon/>
             </div>
-            <button className="flex flex-row items-center justify-center gap-2 bg-blue-300 p-2 rounded-2xl ml-16"><LuCirclePlus /><p>Add new task</p></button>
+            <AddTaskButton/>
             <button className="ml-5"><HiDotsVertical/></button>
             </div>
             

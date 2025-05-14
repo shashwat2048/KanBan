@@ -1,19 +1,19 @@
 import { useSelector } from "react-redux";
 import AddColumn from "../components/AddColumn";
+import Column from "../components/Column";
 
 export default function DashBoard() {
 
     const cols = useSelector(store => store.app.columns);
     const keyList = Object.keys(cols)
-    console.log(keyList)
 
     return (
-        <div className="flex px-10 gap-10">
+        <div className="flex p-10 gap-10 bg-gray-100">
             {
                 keyList.map((key) => {
                     return (
-                        <div>
-                            {key}
+                        <div key={key}>
+                            <Column colKey={key} />
                         </div>
                     )
                 })
